@@ -6,30 +6,36 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        android:orientation="horizontal">
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:id="@+id/image"
+            android:background="#FFF7DA"
             android:src="@mipmap/ic_launcher"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:id="@+id/text_container"
             android:paddingLeft="16dp"
+            android:background="#FD8E09"
             android:paddingTop="16dp">
         <TextView
             android:id="@+id/miwok_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
+            android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="#FFFFFF"
             tools:text="lutti" />
 
         <TextView
             android:id="@+id/default_text_view"
             android:layout_width="match_parent"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
             android:layout_height="wrap_content"
             tools:text="one" />
         </LinearLayout>

@@ -18,6 +18,12 @@ import java.util.ArrayList;
 public class NumbersActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
+    private MediaPlayer.OnCompletionListener mCompleteListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            releaseMediaPlayer();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,16 +54,32 @@ public class NumbersActivity extends AppCompatActivity {
         // {@link ListView} will display list items for each {@link Word} in the list.
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener (new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
 
-                    mediaPlayer = MediaPlayer.create(NumbersActivity.this ,word.getmAudioResourceId());
+                releaseMediaPlayer();
+
+                mediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getmAudioResourceId());
 
                 mediaPlayer.start();
+
+                mediaPlayer.setOnCompletionListener(mCompleteListener);
             }
         });
+    }
+    @Override
+        protected void onStop(){
+        super.onStop();
+        releaseMediaPlayer();
+    }
 
+
+        private void releaseMediaPlayer() {
+            if(mediaPlayer != null){
+                mediaPlayer.release();
+                mediaPlayer = null;
+            }
     }
 }

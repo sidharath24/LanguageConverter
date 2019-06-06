@@ -4,7 +4,15 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,6 +20,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView fab = (ImageView)findViewById(R.id.fabImage);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,MainActivityHindi.class);
+                startActivity(intent);
+            }
+        });
+
         TextView numbers = (TextView) findViewById(R.id.numbers);
         numbers.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -21,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         TextView family = (TextView) findViewById(R.id.family);
+
 
         // Set a click listener on that View
         family.setOnClickListener(new View.OnClickListener() {

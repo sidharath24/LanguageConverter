@@ -23,7 +23,7 @@
             android:background="#FD8E09"
             android:paddingTop="16dp">
         <TextView
-            android:id="@+id/miwok_text_view"
+            android:id="@+id/new_language_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"

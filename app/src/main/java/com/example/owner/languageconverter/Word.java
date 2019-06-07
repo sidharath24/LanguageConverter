@@ -8,6 +8,7 @@ public class Word {
     /** Miwok translation for the word */
     private String mMiwokTranslation;
 
+
     /** Image resource ID for the word */
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
@@ -30,6 +31,8 @@ public class Word {
         mMiwokTranslation = miwokTranslation;
         mAudioResourceId = audioResourceId;
     }
+
+
 
     /**
      * Create a new Word object.
@@ -69,7 +72,6 @@ public class Word {
         return mImageResourceId;
     }
 
-
     /**
      * Returns whether or not there is an image for this word.
      */
@@ -80,4 +82,7 @@ public class Word {
     public int getmAudioResourceId(){
         return mAudioResourceId;
     }
+
+
+
 }

@@ -37,7 +37,7 @@ class WordAdapter extends ArrayAdapter<Word> {
         Word currentWord = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID miwok_text_view.
-        TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
+        TextView miwokTextView = (TextView) listItemView.findViewById(R.id.new_language_text_view);
         // Get the Miwok translation from the currentWord object and set this text on
         // the Miwok TextView.
         miwokTextView.setText(currentWord.getMiwokTranslation());
